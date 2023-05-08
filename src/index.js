@@ -1,5 +1,4 @@
-import './style.css';
-import { printHello, printHi } from './todo';
+import "./style.css";
+import stickyScrollHeader from "./sticky-scroll";
 
-printHello();
-printHi();
+window.addEventListener("scroll", stickyScrollHeader);
