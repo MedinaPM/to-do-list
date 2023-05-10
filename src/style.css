@@ -46,6 +46,9 @@ body {
   height: 100vh;
 }
 
+/*header section styles*/
+/*---------------------------------------------------*/
+
 /*same background to hide content on scroll*/
 body,
 .top-bar,
@@ -76,6 +79,12 @@ body,
   margin: 2.85rem 0 1.1rem;
 }
 
+.top-bar__done-button,
+.nav-bar > button {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 .nav-bar {
   display: flex;
   padding: 0 1rem;
@@ -92,21 +101,18 @@ body,
   color: var(--text);
 }
 
-.nav-bar > button,
-.top-bar__done-button {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
 .nav-bar > button:hover {
   background-color: var(--hover-blue);
   border-bottom: 0.2rem solid var(--hover-blue);
 }
 
-.nav-bar > button.nav-bar_active {
+.nav-bar_active {
   border-bottom: 0.2rem solid var(--text-selected);
   color: var(--text-selected);
 }
+
+/*main section styles*/
+/*---------------------------------------------------*/
 
 .main {
   flex-grow: 1;
@@ -175,6 +181,9 @@ body,
   border-radius: 0.5rem;
 }
 
+/*footer section styles*/
+/*---------------------------------------------------*/
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -215,6 +224,9 @@ body,
 .footer__right-buttons > button:hover {
   background-color: var(--hover-plus);
 }
+
+/*new list screen section styles*/
+/*---------------------------------------------------*/
 
 .new-list-screen {
   background-color: var(--base);
