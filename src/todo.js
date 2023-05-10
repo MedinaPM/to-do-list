@@ -1,18 +1,13 @@
-const aside = document.querySelector(".aside");
+const newListScreen = document.querySelector(".new-list-screen");
 
-const newListButton = document.querySelector(".new-list");
+const newListButton = document.querySelector(".nav-bar__new-list-button");
 const newListFormOpen = () => {
-  aside.style.display = "flex";
-}
-
-const newListButtonClose = document.querySelector(".aside__close");
-const newListFormClose = () => {
-  aside.style.display = "none";
-}
-
-export {
-  newListButton,
-  newListFormOpen,
-  newListButtonClose,
-  newListFormClose
+  newListScreen.style.display = "block";
 };
+
+const closeButton = document.querySelector(".top-bar__close-button");
+const newListFormClose = () => {
+  newListScreen.style.display = "none";
+};
+
+export { newListButton, newListFormOpen, closeButton, newListFormClose };

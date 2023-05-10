@@ -1,14 +1,14 @@
 :root {
   /*colors*/
-  --base: #FCFDFF;
-  --contrast-soft: #E6EFF6;
-  --contrast-strong: #D0E4FF;
+  --base: #fcfdff;
+  --contrast-soft: #e6eff6;
+  --contrast-strong: #d0e4ff;
   --text: #101115;
-  --text-selected: #11628C;
-  --hover-gray: #C9D2D7;
-  --hover-blue: #DEEBF3;
-  --hover-plus: #B7CBE6;
-  --icon-gray: #525C65;
+  --text-selected: #11628c;
+  --hover-gray: #c9d2d7;
+  --hover-blue: #deebf3;
+  --hover-plus: #b7cbe6;
+  --icon-gray: #525c65;
   --icon-blue: #203853;
 
   /*fonts*/
@@ -21,21 +21,23 @@
 }
 
 /*icons size*/
-.favorite > img,
-.list > img,
-.swap > img,
-.more > img,
-.add > img,
+.nav-bar__favorite-button > img,
+.footer__list-button > img,
+.footer__swap-button > img,
+.footer__more-button > img,
+.footer__add-button > img,
 .task_favorite-check > button > img,
-.aside__close > img {
+.top-bar__close-button > img {
   height: 1.6rem;
 }
 
+/*center content inside of all buttons*/
 button {
   display: flex;
   align-items: center;
 }
 
+/*full screen style*/
 body {
   margin: 0;
   display: flex;
@@ -44,32 +46,37 @@ body {
   height: 100vh;
 }
 
+/*same background to hide content on scroll*/
 body,
-.title,
-.nav {
+.top-bar,
+.nav-bar {
   background-color: var(--base);
 }
 
-.title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.top-bar {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: auto 1fr auto auto;
+  grid-template-areas: "L-icon title RL-icon RR-icon";
 }
 
-.title,
-.aside__header > p {
-  font-size: 1.8rem;
+.new-list-screen > .top-bar {
+  justify-items: left;
+}
+
+.top-bar > h1 {
+  grid-area: title;
+  font-size: 1.5rem;
   font-weight: 300;
 }
 
-.title > p,
-.aside__close,
-.aside__header > p,
-.aside__done {
-  margin: 2.75rem 0 1.1rem;
+.top-bar > h1,
+.top-bar__close-button,
+.top-bar__done-button {
+  margin: 2.85rem 0 1.1rem;
 }
 
-.nav {
+.nav-bar {
   display: flex;
   padding: 0 1rem;
   overflow: auto;
@@ -77,26 +84,26 @@ body,
   border-bottom: 0.15rem solid var(--contrast-soft);
 }
 
-.nav > button {
-  padding: 0.45rem 1.2rem;
+.nav-bar > button {
+  padding: 0.6rem 1.2rem;
   border: none;
   border-bottom: 0.2rem solid var(--base);
   background-color: var(--base);
   color: var(--text);
 }
 
-.nav > button,
-.aside__done {
+.nav-bar > button,
+.top-bar__done-button {
   font-size: 1rem;
   font-weight: 500;
 }
 
-.nav > button:hover {
+.nav-bar > button:hover {
   background-color: var(--hover-blue);
   border-bottom: 0.2rem solid var(--hover-blue);
 }
 
-.nav > button.active {
+.nav-bar > button.nav-bar_active {
   border-bottom: 0.2rem solid var(--text-selected);
   color: var(--text-selected);
 }
@@ -113,8 +120,8 @@ body,
   grid-template-areas:
     "check name favorite"
     ". date .";
-    align-items: center;
-    margin: 1rem 0 1.1rem;
+  align-items: center;
+  margin: 1rem 0 1.1rem;
 }
 
 .task_checkbox_container {
@@ -177,39 +184,39 @@ body,
   background-color: var(--contrast-soft);
 }
 
-.footer-buttons {
+.footer__left-buttons {
   display: flex;
   padding: 0.65rem 0.3rem;
 }
 
-.footer-add-button {
+.footer__right-buttons {
   padding: 0.65rem 1.2rem;
 }
 
-.footer-buttons > button {
+.footer__left-buttons > button {
   background-color: var(--contrast-soft);
 }
 
-.footer-add-button > button {
-  background-color: var(--contrast-strong)
+.footer__right-buttons > button {
+  background-color: var(--contrast-strong);
 }
 
-.footer-buttons > button,
-.footer-add-button > button {
+.footer__left-buttons > button,
+.footer__right-buttons > button {
   border-radius: 0.9rem;
   padding: 1.1rem;
   border: none;
 }
 
-.footer-buttons > button:hover {
+.footer__left-buttons > button:hover {
   background-color: var(--hover-gray);
 }
 
-.footer-add-button > button:hover {
+.footer__right-buttons > button:hover {
   background-color: var(--hover-plus);
 }
 
-.aside {
+.new-list-screen {
   background-color: var(--base);
   width: 100%;
   height: 100%;
@@ -218,12 +225,8 @@ body,
   position: fixed;
 }
 
-.aside__header {
-  display: flex;
-}
-
-.aside__close,
-.aside__done {
+.top-bar__close-button,
+.top-bar__done-button {
   padding: 0 0.5rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -231,17 +234,14 @@ body,
   border: none;
 }
 
-.aside__close:hover,
-.aside__done:hover {
+.top-bar__close-button:hover,
+.top-bar__done-button:hover {
   background-color: var(--hover-blue);
 }
 
-.aside__header > p {
-  flex-grow: 1;
-}
-
 #new-list-input {
-  padding: 1.2rem;
+  padding: 1.23rem;
+  width: 100%;
   background-color: var(--base);
   border: none;
   border-top: 0.15rem solid var(--contrast-soft);

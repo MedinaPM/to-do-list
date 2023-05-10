@@ -8,21 +8,21 @@
   </head>
   <body>
     <header class="header">
-      <div class="title">
-        <p>Tasks</p>
+      <div class="top-bar">
+        <h1>Tasks</h1>
       </div>
-      <nav class="nav">
-        <button class="favorite">
-          <img src="../src/icons/star_gray.png" alt="favorites">
+      <nav class="nav-bar">
+        <button class="nav-bar__favorite-button">
+          <img src="../src/icons/star_gray.png" alt="favorites" />
         </button>
-        <button class="active">My Tasks</button>
-        <button class="new-list">+ New list</button>
+        <button class="nav-bar_active">My Tasks</button>
+        <button class="nav-bar__new-list-button">+ New list</button>
       </nav>
     </header>
     <main class="main">
       <div class="task-container">
         <label class="task_checkbox_container">
-          <input type="checkbox" id="task-1">
+          <input type="checkbox" id="task-1" />
           <span class="task_checkbox__input"></span>
         </label>
         <div class="task_name">
@@ -31,7 +31,7 @@
         </div>
         <div class="task_favorite-check">
           <button>
-            <img src="../src/icons/star_empty.png" alt="favorite-check">
+            <img src="../src/icons/star_empty.png" alt="favorite-check" />
           </button>
         </div>
         <div class="task_date">
@@ -40,7 +40,7 @@
       </div>
       <div class="task-container">
         <label class="task_checkbox_container">
-          <input type="checkbox" id="task-1">
+          <input type="checkbox" id="task-1" />
           <span class="task_checkbox__input"></span>
         </label>
         <div class="task_name">
@@ -49,13 +49,13 @@
         </div>
         <div class="task_favorite-check">
           <button>
-            <img src="../src/icons/star_empty.png" alt="favorite-check">
+            <img src="../src/icons/star_empty.png" alt="favorite-check" />
           </button>
         </div>
       </div>
       <div class="task-container">
         <label class="task_checkbox_container">
-          <input type="checkbox" id="task-1">
+          <input type="checkbox" id="task-1" />
           <span class="task_checkbox__input"></span>
         </label>
         <div class="task_name">
@@ -63,13 +63,13 @@
         </div>
         <div class="task_favorite-check">
           <button>
-            <img src="../src/icons/star_empty.png" alt="favorite-check">
+            <img src="../src/icons/star_empty.png" alt="favorite-check" />
           </button>
         </div>
       </div>
       <div class="task-container">
         <label class="task_checkbox_container">
-          <input type="checkbox" id="task-1">
+          <input type="checkbox" id="task-1" />
           <span class="task_checkbox__input"></span>
         </label>
         <div class="task_name">
@@ -78,7 +78,7 @@
         </div>
         <div class="task_favorite-check">
           <button>
-            <img src="../src/icons/star_empty.png" alt="favorite-check">
+            <img src="../src/icons/star_empty.png" alt="favorite-check" />
           </button>
         </div>
         <div class="task_date">
@@ -87,32 +87,32 @@
       </div>
     </main>
     <footer class="footer">
-      <div class="footer-buttons">
-        <button class="list">
-          <img src="../src/icons/list.png" alt="list">
+      <div class="footer__left-buttons">
+        <button class="footer__list-button">
+          <img src="../src/icons/list.png" alt="list" />
         </button>
-        <button class="swap">
-          <img src="../src/icons/swap.png" alt="swap">
+        <button class="footer__swap-button">
+          <img src="../src/icons/swap.png" alt="swap" />
         </button>
-        <button class="more">
-          <img src="../src/icons/more.png" alt="more">
+        <button class="footer__more-button">
+          <img src="../src/icons/more.png" alt="more" />
         </button>
       </div>
-      <div class="footer-add-button">
-        <button class="add">
-          <img src="../src/icons/add.png" alt="add">
+      <div class="footer__right-buttons">
+        <button class="footer__add-button">
+          <img src="../src/icons/add.png" alt="add" />
         </button>
       </div>
     </footer>
-    <aside class="aside">
-      <div class="aside__header">
-        <button class="aside__close">
-          <img src="../src/icons/close.png" alt="close">
+    <aside class="new-list-screen">
+      <div class="top-bar">
+        <button class="top-bar__close-button">
+          <img src="../src/icons/close.png" alt="close" />
         </button>
-        <p>Create new list</p>
-        <button class="aside__done">Done</button>
+        <h1>Create new list</h1>
+        <button class="top-bar__done-button">Done</button>
       </div>
-      <input type="text" id="new-list-input" placeholder="Enter list title">
+      <input type="text" id="new-list-input" placeholder="Enter list title" />
     </aside>
     <script src="main.js"></script>
   </body>

@@ -1,7 +1,7 @@
 let navBarPosition = 0;
 let oldScrollY = 0;
 const header = document.querySelector(".header");
-const nav = document.querySelector(".nav");
+const nav = document.querySelector(".nav-bar");
 const main = document.querySelector(".main");
 const headerHeight = header.offsetHeight;
 const sticky = nav.offsetTop;
@@ -15,7 +15,7 @@ export default function stickyScrollHeader() {
   const scrollAmount = currentScrollY - oldScrollY;
 
   navBarPosition += scrollAmount;
-  navBarPosition = Math.max(0, Math.min(sticky,navBarPosition));
+  navBarPosition = Math.max(0, Math.min(sticky, navBarPosition));
   oldScrollY = currentScrollY;
 
   header.style.top = `-${navBarPosition}px`;

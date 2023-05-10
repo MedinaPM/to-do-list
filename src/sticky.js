@@ -1,4 +1,4 @@
-const nav = document.querySelector(".nav");
+const nav = document.querySelector(".nav-bar");
 const main = document.querySelector(".main");
 const navHeight = nav.offsetHeight;
 const sticky = nav.offsetTop;

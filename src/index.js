@@ -4,11 +4,11 @@ import stickyScrollHeader from "./sticky-scroll";
 import {
   newListButton,
   newListFormOpen,
-  newListButtonClose,
-  newListFormClose
+  closeButton,
+  newListFormClose,
 } from "./todo";
 
 window.addEventListener("scroll", stickyScrollHeader);
 
 newListButton.addEventListener("click", newListFormOpen);
-newListButtonClose.addEventListener("click", newListFormClose)
+closeButton.addEventListener("click", newListFormClose);
