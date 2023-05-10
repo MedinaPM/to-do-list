@@ -15,17 +15,8 @@
         <button class="favorite">
           <img src="../src/icons/star_gray.png" alt="favorites">
         </button>
-        <button>List 1</button>
-        <button>List 2</button>
-        <button class="active">List 3</button>
-        <button>List 4</button>
-        <button>List 5</button>
-        <button>List 6</button>
-        <button>List 7</button>
-        <button>List 8</button>
-        <button>List 9</button>
-        <button>List 10</button>
-        <button>+ New list</button>
+        <button class="active">My Tasks</button>
+        <button class="new-list">+ New list</button>
       </nav>
     </header>
     <main class="main">
@@ -61,7 +52,6 @@
             <img src="../src/icons/star_empty.png" alt="favorite-check">
           </button>
         </div>
-
       </div>
       <div class="task-container">
         <label class="task_checkbox_container">
@@ -114,6 +104,16 @@
         </button>
       </div>
     </footer>
+    <aside class="aside">
+      <div class="aside__header">
+        <button class="aside__close">
+          <img src="../src/icons/close.png" alt="close">
+        </button>
+        <p>Create new list</p>
+        <button class="aside__done">Done</button>
+      </div>
+      <input type="text" id="new-list-input" placeholder="Enter list title">
+    </aside>
     <script src="main.js"></script>
   </body>
 </html>
