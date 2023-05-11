@@ -303,7 +303,12 @@ button.nav-bar_active {
   padding: 1.2rem 0;
 }
 
-.pop-up__container > input {
+#task-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#task-form > input {
   background-color: var(--contrast-soft);
   border: none;
   border-radius: 1rem;
