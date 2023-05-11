@@ -315,6 +315,7 @@ button.nav-bar_active {
 }
 
 #add-details-input {
+  display: none;
   padding: 0rem 1.2rem 0.2rem;
   font-size: 1rem;
 }
