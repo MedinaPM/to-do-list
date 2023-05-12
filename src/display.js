@@ -30,6 +30,20 @@ const showDetailsInput = () => {
   }
 };
 
+const addNewList = () => {
+  const listNameInput = document.querySelector("#new-list-input");
+  const formListName = listNameInput.value;
+  const container = document.querySelector(".nav-bar");
+  const content = document.createElement("button");
+  content.textContent = formListName;
+  container.insertBefore(
+    content,
+    container.children[container.children.length - 1]
+  );
+  listNameInput.value = "";
+  newListFormClose();
+};
+
 // export section
 export {
   newListFormOpen,
@@ -37,4 +51,5 @@ export {
   addNewTask,
   closePopUp,
   showDetailsInput,
+  addNewList,
 };
