@@ -31,17 +31,38 @@ const showDetailsInput = () => {
 };
 
 const addNewList = () => {
+  const active = document.querySelector(".nav-bar_active");
+  active.classList.remove("nav-bar_active");
+
   const listNameInput = document.querySelector("#new-list-input");
   const formListName = listNameInput.value;
   const container = document.querySelector(".nav-bar");
   const content = document.createElement("button");
   content.textContent = formListName;
+  content.classList.add("nav-bar_active");
   container.insertBefore(
     content,
     container.children[container.children.length - 1]
   );
   listNameInput.value = "";
   newListFormClose();
+};
+
+const activateList = (e) => {
+  const active = document.querySelector(".nav-bar_active");
+  const starred = document.querySelector(".nav-bar__favorite-button");
+  const clickedClass = e.target.classList.value;
+  if (e.target.textContent === "+ New list") {
+    newListFormOpen();
+  } else if (clickedClass === "starred-list") {
+    active.classList.remove("nav-bar_active");
+    starred.classList.add("nav-bar_active");
+  } else if (clickedClass === "nav-bar") {
+    // nothing
+  } else {
+    active.classList.remove("nav-bar_active");
+    e.target.classList.add("nav-bar_active");
+  }
 };
 
 // export section
@@ -52,4 +73,5 @@ export {
   closePopUp,
   showDetailsInput,
   addNewList,
+  activateList,
 };

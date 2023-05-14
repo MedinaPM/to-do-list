@@ -5,12 +5,12 @@ import "./checkbox.css";
 // scripts import
 import stickyScrollHeader from "./sticky-scroll";
 import {
-  newListFormOpen,
   newListFormClose,
   addNewTask,
   closePopUp,
   showDetailsInput,
   addNewList,
+  activateList,
 } from "./display";
 import submitNewTask from "./tasks";
 
@@ -18,12 +18,12 @@ import submitNewTask from "./tasks";
 // ---------------------------------------------------
 
 // element selectors for display manipulation
-const newListButton = document.querySelector(".nav-bar__new-list-button");
 const closeButton = document.querySelector(".top-bar__close-button");
 const footerAddButton = document.querySelector(".footer__add-button");
 const popUpBackground = document.querySelector(".pop-up__background");
 const addDetailButton = document.querySelector(".footer__detail-button");
 const doneButton = document.querySelector(".top-bar__done-button");
+const listButtons = document.querySelector(".nav-bar");
 
 //  element selectors for task manipulation
 const saveButton = document.querySelector(".pop-up__save-button");
@@ -35,12 +35,12 @@ const saveButton = document.querySelector(".pop-up__save-button");
 window.addEventListener("scroll", stickyScrollHeader);
 
 // click listeners for display manipulation
-newListButton.addEventListener("click", newListFormOpen);
 closeButton.addEventListener("click", newListFormClose);
 footerAddButton.addEventListener("click", addNewTask);
 popUpBackground.addEventListener("click", closePopUp);
 addDetailButton.addEventListener("click", showDetailsInput);
 doneButton.addEventListener("click", addNewList);
+listButtons.addEventListener("click", activateList);
 
 // click listener for task manipulation
 saveButton.addEventListener("click", submitNewTask);
