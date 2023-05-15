@@ -8,8 +8,8 @@ import {
   newListFormClose,
   addNewTask,
   closePopUp,
-  showDetailsInput,
-  showDueDateInput,
+  toggleDetailsInput,
+  toggleDueDateInput,
   addNewList,
   activateList,
 } from "./display";
@@ -40,10 +40,10 @@ window.addEventListener("scroll", stickyScrollHeader);
 closeButton.addEventListener("click", newListFormClose);
 footerAddButton.addEventListener("click", addNewTask);
 popUpBackground.addEventListener("click", closePopUp);
-addDetailButton.addEventListener("click", showDetailsInput);
+addDetailButton.addEventListener("click", toggleDetailsInput);
 doneButton.addEventListener("click", addNewList);
 listButtons.addEventListener("click", activateList);
-dueDateButton.addEventListener("click", showDueDateInput);
+dueDateButton.addEventListener("click", toggleDueDateInput);
 
 // click listener for task manipulation
 saveButton.addEventListener("click", submitNewTask);

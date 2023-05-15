@@ -1,4 +1,9 @@
-import { closePopUp } from "./display";
+import {
+  hideDetailsInput,
+  hideDueDateInput,
+  resetTaskForm,
+  closePopUp,
+} from "./display";
 
 // array to store tasks
 const myTasks = [];
@@ -27,8 +32,9 @@ export default function submitNewTask() {
     dueDate.value
   );
 
-  const taskForm = document.querySelector("#task-form");
-  taskForm.reset();
+  resetTaskForm();
+  hideDetailsInput();
+  hideDueDateInput();
 
   myTasks.push(newTask);
 

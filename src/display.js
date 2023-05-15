@@ -3,6 +3,7 @@ const newListScreen = document.querySelector(".new-list-screen");
 const popUp = document.querySelector(".pop-up");
 const detailsInput = document.querySelector("#add-details-input");
 const dueDateInput = document.querySelector("#due-date");
+const taskForm = document.querySelector("#task-form");
 
 // functions to manipulate DOM elements
 const newListFormOpen = () => {
@@ -17,28 +18,51 @@ const addNewTask = () => {
   popUp.style.display = "flex";
 };
 
-const closePopUp = () => {
-  popUp.style.display = "none";
+const showDetailsInput = () => {
+  detailsInput.style.display = "block";
 };
 
-const showDetailsInput = () => {
+const hideDetailsInput = () => {
+  detailsInput.style.display = "none";
+};
+
+const toggleDetailsInput = () => {
   const displayStatus = window.getComputedStyle(detailsInput).display;
 
   if (displayStatus === "none") {
-    detailsInput.style.display = "block";
+    showDetailsInput();
   } else {
-    detailsInput.style.display = "none";
+    hideDetailsInput();
   }
 };
 
 const showDueDateInput = () => {
+  dueDateInput.style.display = "block";
+};
+
+const hideDueDateInput = () => {
+  dueDateInput.style.display = "none";
+};
+
+const toggleDueDateInput = () => {
   const displayStatus = window.getComputedStyle(dueDateInput).display;
 
   if (displayStatus === "none") {
-    dueDateInput.style.display = "block";
+    showDueDateInput();
   } else {
-    dueDateInput.style.display = "none";
+    hideDueDateInput();
   }
+};
+
+const resetTaskForm = () => {
+  taskForm.reset();
+};
+
+const closePopUp = () => {
+  popUp.style.display = "none";
+  hideDetailsInput();
+  hideDueDateInput();
+  resetTaskForm();
 };
 
 const addNewList = () => {
@@ -81,9 +105,12 @@ export {
   newListFormOpen,
   newListFormClose,
   addNewTask,
+  hideDetailsInput,
+  toggleDetailsInput,
+  hideDueDateInput,
+  toggleDueDateInput,
+  resetTaskForm,
   closePopUp,
-  showDetailsInput,
-  showDueDateInput,
   addNewList,
   activateList,
 };
