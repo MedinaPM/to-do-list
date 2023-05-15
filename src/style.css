@@ -337,6 +337,10 @@ button.nav-bar_active {
   justify-content: space-between;
 }
 
+.priority-high {
+  display: none;
+}
+
 .pop-up__save-button {
   font-size: 1.1rem;
   color: var(--text-selected);

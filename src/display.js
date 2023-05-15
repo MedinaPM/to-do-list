@@ -4,6 +4,9 @@ const popUp = document.querySelector(".pop-up");
 const detailsInput = document.querySelector("#add-details-input");
 const dueDateInput = document.querySelector("#due-date");
 const taskForm = document.querySelector("#task-form");
+const priorityNormal = document.querySelector(".priority-normal");
+const priorityHigh = document.querySelector(".priority-high");
+const footerStarButton = document.querySelector(".footer__starred-button");
 
 // functions to manipulate DOM elements
 const newListFormOpen = () => {
@@ -54,6 +57,28 @@ const toggleDueDateInput = () => {
   }
 };
 
+const setHighPriority = () => {
+  priorityNormal.style.display = "none";
+  priorityHigh.style.display = "block";
+  footerStarButton.id = "high";
+};
+
+const setNormalPriority = () => {
+  priorityNormal.style.display = "block";
+  priorityHigh.style.display = "none";
+  footerStarButton.id = "normal";
+};
+
+const toggleTaskPriority = () => {
+  const normalStatus = window.getComputedStyle(priorityNormal).display;
+
+  if (normalStatus === "block") {
+    setHighPriority();
+  } else {
+    setNormalPriority();
+  }
+};
+
 const resetTaskForm = () => {
   taskForm.reset();
 };
@@ -62,6 +87,7 @@ const closePopUp = () => {
   popUp.style.display = "none";
   hideDetailsInput();
   hideDueDateInput();
+  setNormalPriority();
   resetTaskForm();
 };
 
@@ -109,6 +135,8 @@ export {
   toggleDetailsInput,
   hideDueDateInput,
   toggleDueDateInput,
+  setNormalPriority,
+  toggleTaskPriority,
   resetTaskForm,
   closePopUp,
   addNewList,
