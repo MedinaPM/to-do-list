@@ -9,6 +9,7 @@ import {
   addNewTask,
   closePopUp,
   showDetailsInput,
+  showDueDateInput,
   addNewList,
   activateList,
 } from "./display";
@@ -24,6 +25,7 @@ const popUpBackground = document.querySelector(".pop-up__background");
 const addDetailButton = document.querySelector(".footer__detail-button");
 const doneButton = document.querySelector(".top-bar__done-button");
 const listButtons = document.querySelector(".nav-bar");
+const dueDateButton = document.querySelector(".footer__due-date-button");
 
 //  element selectors for task manipulation
 const saveButton = document.querySelector(".pop-up__save-button");
@@ -41,6 +43,7 @@ popUpBackground.addEventListener("click", closePopUp);
 addDetailButton.addEventListener("click", showDetailsInput);
 doneButton.addEventListener("click", addNewList);
 listButtons.addEventListener("click", activateList);
+dueDateButton.addEventListener("click", showDueDateInput);
 
 // click listener for task manipulation
 saveButton.addEventListener("click", submitNewTask);

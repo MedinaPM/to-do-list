@@ -2,6 +2,7 @@
 const newListScreen = document.querySelector(".new-list-screen");
 const popUp = document.querySelector(".pop-up");
 const detailsInput = document.querySelector("#add-details-input");
+const dueDateInput = document.querySelector("#due-date");
 
 // functions to manipulate DOM elements
 const newListFormOpen = () => {
@@ -27,6 +28,16 @@ const showDetailsInput = () => {
     detailsInput.style.display = "block";
   } else {
     detailsInput.style.display = "none";
+  }
+};
+
+const showDueDateInput = () => {
+  const displayStatus = window.getComputedStyle(dueDateInput).display;
+
+  if (displayStatus === "none") {
+    dueDateInput.style.display = "block";
+  } else {
+    dueDateInput.style.display = "none";
   }
 };
 
@@ -72,6 +83,7 @@ export {
   addNewTask,
   closePopUp,
   showDetailsInput,
+  showDueDateInput,
   addNewList,
   activateList,
 };

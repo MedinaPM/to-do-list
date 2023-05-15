@@ -325,6 +325,13 @@ button.nav-bar_active {
   font-size: 1rem;
 }
 
+#due-date {
+  display: none;
+  padding: 0 1.2rem 0.2rem;
+  width: min-content;
+  font-size: 1rem;
+}
+
 .pop-up-footer {
   display: flex;
   justify-content: space-between;
