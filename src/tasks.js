@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { formatRelative, parseISO } from 'date-fns';
+
 import {
   hideDetailsInput,
   hideDueDateInput,
@@ -25,14 +28,22 @@ export default function submitNewTask() {
   const formTask = document.querySelector("#new-task-input");
   const formDetail = document.querySelector("#add-details-input");
   const activeList = document.querySelector(".nav-bar_active");
-  const dueDate = document.querySelector("#due-date");
   const footerStarButton = document.querySelector(".footer__starred-button");
+  const dueDateValue = document.querySelector("#due-date").value;
+  let dueDate = "";
+
+  if (dueDateValue === "") {
+    dueDate = "";
+  } else {
+    const today = new Date();
+    dueDate = formatRelative(parseISO(dueDateValue), today);
+  };
 
   const newTask = Task(
     formTask.value,
     formDetail.value,
     activeList.textContent,
-    dueDate.value,
+    dueDate,
     footerStarButton.id
   );
 
