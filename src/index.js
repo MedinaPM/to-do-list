@@ -14,7 +14,7 @@ import {
   addNewList,
   activateList,
 } from "./display";
-import submitNewTask from "./tasks";
+import { renderTasks, submitNewTask } from "./tasks";
 
 // selectors
 // ---------------------------------------------------
@@ -43,10 +43,19 @@ closeButton.addEventListener("click", newListFormClose);
 footerAddButton.addEventListener("click", addNewTask);
 popUpBackground.addEventListener("click", closePopUp);
 addDetailButton.addEventListener("click", toggleDetailsInput);
-doneButton.addEventListener("click", addNewList);
-listButtons.addEventListener("click", activateList);
+doneButton.addEventListener("click", () => {
+  addNewList();
+  renderTasks();
+});
+listButtons.addEventListener("click", (e) => {
+  activateList(e);
+  renderTasks();
+});
 dueDateButton.addEventListener("click", toggleDueDateInput);
 footerStarButton.addEventListener("click", toggleTaskPriority);
 
 // click listener for task manipulation
-saveButton.addEventListener("click", submitNewTask);
+saveButton.addEventListener("click", () => {
+  submitNewTask();
+  renderTasks();
+});

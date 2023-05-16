@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { formatRelative, parseISO } from 'date-fns';
+import { formatRelative, parseISO } from "date-fns";
 
 import {
   hideDetailsInput,
@@ -11,6 +11,21 @@ import {
 
 // array to store tasks
 const myTasks = [];
+
+// render list of task
+const renderTasks = () => {
+  console.log("|||||||||||||||||||||||||||||");
+  console.log("-----------------");
+  myTasks.forEach((task) => {
+    console.log(`Name: ${task.getName()}`);
+    console.log(`Details: ${task.getDetail()}`);
+    console.log(`List: ${task.getList()}`);
+    console.log(`Due Date: ${task.getDueDate()}`);
+    console.log(`Priority: ${task.getPriority()}`);
+    console.log("-----------------");
+  });
+  console.log("|||||||||||||||||||||||||||||");
+};
 
 // factory to create new tasks
 const Task = (name, detail, list, dueDate, priority) => {
@@ -24,7 +39,7 @@ const Task = (name, detail, list, dueDate, priority) => {
 };
 
 // task object manipulation
-export default function submitNewTask() {
+const submitNewTask = () => {
   const formTask = document.querySelector("#new-task-input");
   const formDetail = document.querySelector("#add-details-input");
   const activeList = document.querySelector(".nav-bar_active");
@@ -37,7 +52,7 @@ export default function submitNewTask() {
   } else {
     const today = new Date();
     dueDate = formatRelative(parseISO(dueDateValue), today);
-  };
+  }
 
   const newTask = Task(
     formTask.value,
@@ -55,12 +70,6 @@ export default function submitNewTask() {
   myTasks.push(newTask);
 
   closePopUp();
+};
 
-  myTasks.forEach((task) => {
-    console.log(task.getName());
-    console.log(task.getDetail());
-    console.log(task.getList());
-    console.log(task.getDueDate());
-    console.log(task.getPriority());
-  });
-}
+export { renderTasks, submitNewTask };
