@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { formatRelative, parseISO } from "date-fns";
-
+import { clearScreen, renderElements } from "./render";
 import {
   hideDetailsInput,
   hideDueDateInput,
@@ -14,17 +14,10 @@ const myTasks = [];
 
 // render list of task
 const renderTasks = () => {
-  console.log("|||||||||||||||||||||||||||||");
-  console.log("-----------------");
+  clearScreen();
   myTasks.forEach((task) => {
-    console.log(`Name: ${task.getName()}`);
-    console.log(`Details: ${task.getDetail()}`);
-    console.log(`List: ${task.getList()}`);
-    console.log(`Due Date: ${task.getDueDate()}`);
-    console.log(`Priority: ${task.getPriority()}`);
-    console.log("-----------------");
+    renderElements(myTasks, task);
   });
-  console.log("|||||||||||||||||||||||||||||");
 };
 
 // factory to create new tasks
