@@ -102,6 +102,13 @@ const renderElements = (array, item) => {
   elementCreator(`#task-${itemID} > .task_favorite-check`, "button");
 
   // star icon img
+  const stat = item.getPriority();
+  let icon = "";
+  if (stat === "high") {
+    icon = "../src/icons/star_blue.png";
+  } else {
+    icon = "../src/icons/star_empty.png";
+  }
   elementCreator(
     `#task-${itemID} > .task_favorite-check > button`,
     "img",
@@ -109,7 +116,7 @@ const renderElements = (array, item) => {
     undefined,
     undefined,
     undefined,
-    "../src/icons/star_empty.png",
+    icon,
     "favorite-check"
   );
 
