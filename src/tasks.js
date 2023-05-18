@@ -15,8 +15,14 @@ const myTasks = [];
 // render list of task
 const renderTasks = () => {
   clearScreen();
-  myTasks.forEach((task) => {
-    renderElements(myTasks, task);
+
+  const activeList = document.querySelector(".nav-bar_active");
+  const listName = activeList.textContent;
+  const isInList = (value) => value.getList() === listName;
+  const filtered = myTasks.filter(isInList);
+
+  filtered.forEach((task) => {
+    renderElements(filtered, task);
   });
 };
 
