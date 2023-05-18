@@ -18,8 +18,18 @@ const renderTasks = () => {
 
   const activeList = document.querySelector(".nav-bar_active");
   const listName = activeList.textContent;
+  const isHigh = (value) => value.getPriority() === "high";
   const isInList = (value) => value.getList() === listName;
-  const filtered = myTasks.filter(isInList);
+  let filtered = myTasks.filter(isHigh);
+
+  if (activeList.classList[0] === "nav-bar__favorite-button") {
+    filtered = myTasks.filter(isHigh);
+    filtered.forEach((task) => {
+      renderElements(filtered, task);
+    });
+  } else {
+    filtered = myTasks.filter(isInList);
+  }
 
   filtered.forEach((task) => {
     renderElements(filtered, task);
