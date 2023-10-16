@@ -1,0 +1,63 @@
+/* The checkbox container */
+.task_checkbox_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+  cursor: pointer;
+}
+
+/* Hide the browser's default checkbox */
+.task_checkbox_container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.task_checkbox__input {
+  position: absolute;
+  border: 0.1rem solid var(--text);
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  background-color: var(--base);
+}
+
+/* On mouse-over, add a grey background color */
+.task_checkbox_container:hover input ~ .task_checkbox__input {
+  background-color: var(--hover-blue);
+}
+
+/* When the checkbox is checked, add a blue background */
+.task_checkbox_container input:checked ~ .task_checkbox__input {
+  background-color: var(--base);
+  border: none;
+}
+
+/* Create the task_checkbox__input/indicator (hidden when not checked) */
+.task_checkbox__input:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the task_checkbox__input when checked */
+.task_checkbox_container input:checked ~ .task_checkbox__input:after {
+  display: block;
+}
+
+/* Style the task_checkbox__input/indicator */
+.task_checkbox_container .task_checkbox__input:after {
+  left: 0.25rem;
+  top: -0.25rem;
+  width: 0.5rem;
+  height: 1rem;
+  border: solid var(--text-selected);
+  border-width: 0 0.13rem 0.13rem 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

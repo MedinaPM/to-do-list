@@ -1,0 +1,347 @@
+:root {
+  /*colors*/
+  --base: #fcfdff;
+  --base-dark: #101115a5;
+  --contrast-soft: #e6eff6;
+  --contrast-strong: #d0e4ff;
+  --text: #101115;
+  --text-selected: #11628c;
+  --hover-gray: #c9d2d7;
+  --hover-blue: #deebf3;
+  --hover-plus: #b7cbe6;
+  --icon-gray: #525c65;
+  --icon-blue: #203853;
+
+  /*fonts*/
+  font-family: sans-serif;
+}
+
+/*hide scrollbar*/
+::-webkit-scrollbar {
+  display: none;
+}
+
+/*icons size*/
+.nav-bar__favorite-button > img,
+.footer__list-button > img,
+.footer__swap-button > img,
+.footer__more-button > img,
+.footer__add-button > img,
+.task_favorite-check > button > img,
+.top-bar__close-button > img,
+.footer__detail-button > img,
+.footer__due-date-button > img,
+.footer__starred-button > img {
+  height: 1.5rem;
+}
+
+/*center content inside of all buttons*/
+button {
+  display: flex;
+  align-items: center;
+}
+
+/*full screen style*/
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+/*header section styles*/
+/*---------------------------------------------------*/
+
+/*same background to hide content on scroll*/
+body,
+.top-bar,
+.nav-bar {
+  background-color: var(--base);
+}
+
+.top-bar {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: auto 1fr auto auto;
+  grid-template-areas: "L-icon title RL-icon RR-icon";
+}
+
+.new-list-screen > .top-bar {
+  justify-items: left;
+}
+
+.top-bar > h1 {
+  grid-area: title;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.top-bar > h1,
+.top-bar__close-button,
+.top-bar__done-button {
+  margin: 2.85rem 0 1.1rem;
+}
+
+.top-bar__done-button,
+.nav-bar > button {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.top-bar__done-button {
+  color: var(--text-selected);
+}
+
+.nav-bar {
+  display: flex;
+  padding: 0 1rem;
+  overflow: auto;
+  white-space: nowrap;
+  border-bottom: 0.15rem solid var(--contrast-soft);
+}
+
+.nav-bar > button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-bottom: 0.2rem solid var(--base);
+  background-color: var(--base);
+  color: var(--text);
+}
+
+.nav-bar > button:hover {
+  background-color: var(--hover-blue);
+  border-bottom: 0.2rem solid var(--hover-blue);
+}
+
+button.nav-bar_active {
+  border-bottom: 0.2rem solid var(--text-selected);
+  color: var(--text-selected);
+}
+
+/*main section styles*/
+/*---------------------------------------------------*/
+
+.main {
+  flex-grow: 1;
+  padding: 0 0.8rem 0.8rem;
+}
+
+.task-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "check name favorite"
+    ". date .";
+  align-items: center;
+  margin: 1rem 0 1.1rem;
+}
+
+.task_checkbox_container {
+  grid-area: check;
+}
+
+.task_name {
+  padding: 0 0.5rem;
+  grid-area: name;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task_name__title,
+.task_name__description {
+  color: var(--text);
+  margin: 0;
+}
+
+.task_name__title {
+  font-size: 1.1rem;
+}
+
+.task_name__description,
+#new-list-input {
+  font-size: 0.95rem;
+  font-weight: 100;
+}
+
+.task_favorite-check {
+  grid-area: favorite;
+}
+
+.task_favorite-check > button {
+  background-color: var(--base);
+  border: none;
+}
+
+.task_date {
+  grid-area: date;
+  padding: 0.55rem;
+}
+
+.task_date > button {
+  background-color: var(--base);
+  padding: 0.35rem 1rem;
+  font-size: 1rem;
+  color: var(--text);
+  border: 0.1rem solid var(--text);
+  border-radius: 0.5rem;
+}
+
+/*footer section styles*/
+/*---------------------------------------------------*/
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--contrast-soft);
+}
+
+.footer__left-buttons {
+  display: flex;
+  margin: 0 0.4rem;
+}
+
+.footer__right-buttons {
+  margin: 0 1rem;
+}
+
+.footer {
+  padding: 0.75rem 0;
+}
+
+.footer__left-buttons > button {
+  background-color: var(--contrast-soft);
+}
+
+.footer__right-buttons > button {
+  background-color: var(--contrast-strong);
+}
+
+.footer__left-buttons > button {
+  border-radius: 0.9rem;
+  padding: 0.5rem 0.7rem;
+  border: none;
+}
+
+.footer__right-buttons > button {
+  border-radius: 0.9rem;
+  padding: 1rem;
+  border: none;
+}
+
+.footer__left-buttons > button:hover {
+  background-color: var(--hover-gray);
+}
+
+.footer__right-buttons > button:hover {
+  background-color: var(--hover-plus);
+}
+
+/*new list screen section styles*/
+/*---------------------------------------------------*/
+
+.new-list-screen {
+  background-color: var(--base);
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  position: fixed;
+}
+
+.top-bar__close-button,
+.top-bar__done-button {
+  padding: 0 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: var(--base);
+  border: none;
+}
+
+.top-bar__close-button:hover,
+.top-bar__done-button:hover {
+  background-color: var(--hover-blue);
+}
+
+#new-list-input {
+  padding: 1.23rem;
+  width: 100%;
+  background-color: var(--base);
+  border: none;
+  border-top: 0.15rem solid var(--contrast-soft);
+  border-bottom: 0.15rem solid var(--contrast-soft);
+}
+
+/*footer pop-up section styles*/
+/*---------------------------------------------------*/
+
+.pop-up {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--base-dark);
+}
+
+.pop-up__background {
+  flex-grow: 1;
+}
+
+.pop-up__container {
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 1.8rem;
+  border-top-right-radius: 1.8rem;
+  background-color: var(--contrast-soft);
+  padding: 1.2rem 0;
+}
+
+#task-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#task-form > input {
+  background-color: var(--contrast-soft);
+  border: none;
+  border-radius: 1rem;
+}
+
+#new-task-input {
+  padding: 0.6rem 1.2rem;
+  font-size: 1.15rem;
+}
+
+#add-details-input {
+  display: none;
+  padding: 0rem 1.2rem 0.2rem;
+  font-size: 1rem;
+}
+
+#due-date {
+  display: none;
+  padding: 0 1.2rem 0.2rem;
+  width: min-content;
+  font-size: 1rem;
+}
+
+.pop-up-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.priority-high {
+  display: none;
+}
+
+.pop-up__save-button {
+  font-size: 1.1rem;
+  color: var(--text-selected);
+}
