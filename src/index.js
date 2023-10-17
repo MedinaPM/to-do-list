@@ -2,6 +2,9 @@
 import "./style.css";
 import "./checkbox.css";
 
+// import js generated images
+import "./icons/star_blue.png";
+
 // scripts import
 import stickyScrollHeader from "./sticky-scroll";
 import {
